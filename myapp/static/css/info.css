@@ -1,0 +1,149 @@
+:root {
+    --green: #5cb85c;
+    --blue: #3A98B9;
+    --red: #d9534f;
+    --yellow: #FFE15D;
+    --font-dark: #212A3E;
+    --font-white: #FFFF;
+    --inverse: #292b2c;
+    --faded: #f7f7f7;
+  }
+
+body{
+    font-family: 'Helvetica';
+    color: #212A3E;
+}
+
+/* ID SECTION */
+#fund{
+    overflow:scroll;
+    text-overflow:ellipsis;
+}
+#num{
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+#sect{
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 3vh;
+}
+#button{
+    padding: 10px;
+    border-radius: 10px;
+}
+/* CLASS SECTION */
+.content{
+    display: flex;
+    gap: 2vh
+}
+
+
+
+.header{
+    padding: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #0275d8;
+}
+.section-1b{
+    margin-top: 3vh;
+}
+.section2{
+    margin-top: 3vh;
+}
+.section3{
+    width: 100%;
+}
+
+.card-section{
+    display: block;
+    justify-content: center;
+}
+
+.card{
+    width: 350px;
+    height: 100px;
+}
+
+
+.card2{
+
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.card2, .card2-title{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+
+.card-title{
+    padding: 10px;
+    width: 100%;
+    background-color: #d9534f;
+    color: #ffff;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    
+}
+.card-desc{
+    padding: 10px;
+    
+}
+
+.card-section{
+    display: flex;
+    gap: 3vh;
+}
+
+.card2-title{
+    padding: 10px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--faded);
+    background-color: var(--blue);
+
+}
+.card2-desc{
+    padding: 10px;
+    font-size: 1.1;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.card3-title{
+    font-weight: bold;
+    font-size: 20px;
+}
+.card3-desc{
+    margin-top: 10px;
+}
+.link-sect{
+    padding: 10px;
+}
+
+.link-sect .link{
+    display: block;
+    font-style: italic;
+    color: #3A98B9;
+}
+.btn-set{
+    display: flex;
+    margin-top: 20px;
+    gap: 2vh;
+}
+
+.addfile{
+    background-color: #0275d8;
+    color: #ffff;
+}
+
+.report{
+    background-color: #f0ad4e;
+    color: #ffff;
+}

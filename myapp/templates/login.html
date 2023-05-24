@@ -1,0 +1,13 @@
+{% if user.is_authenticated %}
+  <p>Welcome, {{ user.username }}!</p>
+  <a href="logout">Logout</a>
+{% else %}
+  <form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
+    <button type="submit">Login</button>
+  </form>
+{% endif %}

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}project Records{% endblock title %}
+
+{% block content %}
+
+{% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/info.css' %}">
+  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'%}">
+  
+</head>
+
+<body>
+  <div class="main">
+
+    <div class="content">
+      <div class="left-col">
+        <section id="sect" class="proj-details">
+          <header class="header">Project Details</header>
+          <div class="card-section">
+            <div class="card">
+              <div class="card-title">Contract Amount/Budget</div>
+              <div id="num" class="card-desc">{{ view.budg|linebreaksbr|intcomma }}</div>
+            </div>
+
+            <div id="fund" class="card">
+              <div class="card-title">Funding Particulars</div>
+              <div class="card-desc">{{ view.fund|linebreaksbr|intcomma }}</div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Status</div>
+              <div id="num" class="card-desc">{{ view.progress }}%</div>
+            </div>
+          </div>
+
+
+        </section>
+
+        <section id="sect" class="section2">
+          <span class="info-box-text text-center text-muted">Progress</span>
+          <span class="info-box-number text-center text-muted mb-0">
+            <div class="progress progress-lg">
+              <div class="progress-bar" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="background-color: {{progress_color}}; width:{{ view.progress }}%">
+              </div>
+          </div>
+        </section>
+
+        <section id="sect" class="section2">
+          <header class="header">Other Details</header>
+          <div class="card2">
+            <div class="card2-title">Contract Description</div>
+            <div class="card2-desc">{{ view.cont }}</div>
+          </div>
+          <hr>
+          <div class="card2">
+            <div class="card2-title">Project Profile</div>
+            <div class="card2-desc">{{ view.proj_profile }}</div>
+          </div>
+          <hr>
+
+          <div class="card2">
+            <div class="card2-title">Project Status</div>
+            <div id="complete" class="card2-desc">{{ view.proj_comment }}</div>
+          </div>
+
+        </section>
+      </div>
+
+
+      <div class="righ-col">
+        <section id="sect" class="section3">
+          <div class="card3">
+            <div class="card2-title">Description</div>
+            <div id="complete" class="card2-desc">{{ view.desc|linebreaksbr }}</div>
+          </div>
+          <br>
+          <div class="card3">
+            <div class="card3-title">Agency</div>
+            <div class="card3-desc">{{ view.agency }}</div>
+          </div>
+
+          <div class="card3">
+            <div class="card3-title">Location</div>
+            <div class="card3-desc">{{ view.loc }}</div>
+          </div>
+        </section>
+        <section id="sect">
+          <header class="header">Project Files</header>
+          <div class="link-sect">
+            <a class="link" href="#">Function Requirements Docs</a>
+            <a class="link" href="#">UAT PDF</a>
+            <a class="link" href="#">Email from Flatbal</a>
+            <a class="link" href="#">Logo</a>
+            <a class="link" href="#">Contract</a>
+          </div>
+          <div class="btn-set">
+            <a id="button" class="addfile" href="#">Add Files</a>
+            <a id="button" class="report" href="#">Report Contact</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+{% endblock content %}

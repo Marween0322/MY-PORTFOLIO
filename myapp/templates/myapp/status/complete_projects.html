@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Records{% endblock title %}
+
+{% block content %}
+<div class="col-md-12">
+
+    <br>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="d-grid">
+                 <!-- Small boxes (Stat box) -->
+                <div class="row">
+                    <div class="col-lg-2 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                        <h3>{{ count_all }}</h3>
+        
+                        <p>Total Projects</p>
+                        </div>
+                        <div class="icon">
+                        <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-2 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                        <h3>{{ count_complete }}</h3>
+        
+                        <p>Completed Projects</p>
+                        </div>
+                        <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="/complete-projects" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-2 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                        <h3>{{ count_ongoing }}</h3>
+        
+                        <p>Ongoing Projects</p>
+                        </div>
+                        <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="/ongoing-projects" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-2 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                        <h3>{{ count_procurement }}</h3>
+        
+                        <p>Under Procurement Projects</p>
+                        </div>
+                        <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="/procurement-projects" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                    <!-- ./col -->
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Overall Project Table</h3>
+
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Location</th>
+                    <th>Project Description</th>
+                    <th>Status</th>
+                    <th>Funding Particulars</th>
+                    <th>Contract Description</th>
+                    <th>Project Profile</th>
+                    <th>Project Status</th>
+                    <th>Slippage</th>
+                    <th>Contract Amount/ Budget</th>
+                    <th>Agency</th>
+                    <th>Area</th>
+                    <th>Region</th>
+                    <th>Certificate</th>
+                    <th>Recouped Ad. Payment</th>
+                    <th>Progress</th>
+                  </tr>
+                </thead>
+                <tbody>
+   {% for projects in complete %}  
+   <tr>
+    <td style="width: 10px;">{{ projects.id }}</td>
+    <td> <a href="/test/{{ projects.id }} ">{{ projects.loc|linebreaksbr }}</a>  </td>
+    <td>{{ projects.desc|linebreaksbr }}</td>
+    <td>{{ projects.proj_stat|linebreaksbr }}</td>
+    <td>{{ projects.fund|linebreaksbr }}</td>
+    <td>{{ projects.desc|linebreaksbr }}</td>
+    <td>{{ projects.proj_profile|linebreaksbr }}</td>
+    <td>{{ projects.proj_comment|linebreaksbr }}</td>
+    <td>{{ projects.slip|linebreaksbr }}</td>
+    <td>{{ projects.budg|linebreaksbr }}</td>
+    <td>{{ projects.agency|linebreaksbr }}</td>
+    <td>{{ projects.area|linebreaksbr }}</td>
+    <td>{{ projects.reg|linebreaksbr }}</td>
+    <td>{{ projects.cert|linebreaksbr }}</td>
+    <td>{{ projects.reco|linebreaksbr }}</td>
+    <td>{{ projects.progress|linebreaksbr }}</td>
+
+  </tr>
+</tbody>
+{% endfor %}
+</table>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock content %}

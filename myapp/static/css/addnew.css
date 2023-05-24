@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --green: #5cb85c;
+    --blue: #3A98B9;
+    --red: #d9534f;
+    --yellow: #FFE15D;
+    --font-dark: #212A3E;
+    --font-white: #FFFF;
+    --inverse: #292b2c;
+    --faded: #f7f7f7;
+  }
+
+
+#mySlider {
+    width: 80%;
+    margin: 0 auto;
+  }
+*{
+    color: var(--font-dark);
+    font-family: 'Lato';
+}
+.addform{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid var(--inverse);
+    border-radius: 15px;
+    padding: 3vh;
+    width: 40%;
+}
+.fldset{
+    width: 100%;
+}
+.lbl{
+    font-size: 1.5rem;
+    color: var(--inverse);
+}
+
+.inp{
+    width: 100%;
+}

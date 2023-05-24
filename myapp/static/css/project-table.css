@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+:root {
+    --green: #5cb85c;
+    --blue: #3A98B9;
+    --red: #d9534f;
+    --yellow: #FFE15D;
+    --font-dark: #212A3E;
+    --font-white: #FFFF;
+    --inverse: #292b2c;
+    --faded: #f7f7f7;
+  }
+
+body{
+    color: var(--font-dark);
+    font-family: 'Lato';
+}
+.section-block{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card{
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 20px;
+}
+
+
+/* TABLE CSS */
+.card-table{
+    padding: 40px;
+
+}
+th{
+    text-align: center;
+    font-size: 1.3rem;
+}
+tbody tr td{
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+}
+.pid{
+    width: 5%; 
+    text-align: center;
+    font-weight: 900;
+}
+.pname{
+    width: 60%;
+    overflow: hidden;
+}
+.pname-link{
+
+  
+}
+.pname-link:hover{
+    text-decoration: none;
+    background-color: lightgray;
+    transition: .2s ease;
+    
+}
+
+.pstatus{
+    width: 20%;
+    text-align: center;
+
+}
+.stat{
+    padding: 10px;
+
+    border-radius: 10px;
+    margin-left: 20px;
+    text-overflow: ellipsis;
+}
+
+/* ID STATUS COLOR */
+#complete{
+    background-color: var(--green);
+}
+#ongoing{
+    background-color: var(--yellow);
+}
+#proc{
+    background-color: var(--red);
+    color: #ffff;
+}
+
+.paction{
+    width: 5%;
+    text-align: center;
+}
+
+.bar{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CAAP Project Monitoring</title>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  {% load static %}
+
+
+
+
+</head>
+
+<link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+<link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+<link rel="stylesheet" href="{% static '../../dist/css/adminlte.min.css'}">
+
+
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+<script src="{% static 'https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js'%}"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./index.css" />
+
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;1,500;1,700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hammersmith One:wght@400&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fugaz One:wght@400&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cousine:wght@700&display=swap" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+  .container-fluid {
+    width: 90% !important;
+  }
+
+  body{
+    font-family: 'Lato';
+}
+.form-field{
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+}
+
+
+.lbl{
+    width: 100%;
+    margin-top: 3vh;
+}
+.input{
+    width: 100%;
+}
+.submit{
+  margin-top: 3vh;
+  padding: 10px;
+  background-color: #3A98B9;
+  color: #ffff;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+  nav {
+    background-color: white;
+  }
+
+  .nav-hdr{
+    display: flex;
+    gap: 1vh;
+    align-items: center;
+    margin-left: 3vh;
+  }
+  .caaplogo{
+    width: 100px;
+    height: auto;
+  }
+  .nav-title{
+    font-weight: bold; 
+    font-family: 'Helvetica'; 
+    font-size: 2rem;
+  }
+  #caap{
+    background: url('../img/caap.png') no-repeat 150% 30%;
+    background-size: 250px;
+  }
+  a {
+    font-size: 1.2rem;
+  }
+
+  #link {
+    background-color: #5cb85c;
+    border-radius: 10px;
+  }
+
+  ul {
+    float: right;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    gap: 5px
+  }
+
+  ul li:hover {
+    border-radius: 5px;
+    transition: .3s ease;
+
+  }
+  .header{
+    display: flex;
+    gap: 2vh;
+  }
+  .img{
+    width: 50px;
+    height: auto;
+  }
+  
+
+  .navbar {
+
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+  }
+
+  .collapse {
+    padding: 10px;
+    margin-top: 10px;
+    height: 1500px;
+    /* Used in this example to enable scrolling */
+  }
+  .ysa{
+    margin-left: 5vh;
+    background-color: #d9534f;
+    padding: 20px;
+    border-radius: 15px;
+    color: #ffff;
+  }
+</style>
+
+</head>
+{% if user.is_authenticated %}
+<nav class="navbar navbar-expand-lg">
+  <div class="nav-hdr">
+    <img class="caaplogo" src="{% static 'img/caap.png' %}" alt="">
+    <div class="nav-title" href="#">CAAP Airport Project Profile</div>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/caap_ap">Airport Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="link" href="/addnew">Create Record</a>
+      </li>
+      <li>
+        <a class="ysa" href="/logout">Log Out</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+{% else %}
+<nav class="navbar navbar-expand-lg">
+  <div class="nav-hdr">
+    <img class="caaplogo" src="{% static 'img/caap.png' %}" alt="">
+    <div class="nav-title" href="#">CAAP Airport Project Profile</div>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+{% endif %}
+
+
+<div></div>
+
+<body class="hold-transition sidebar-mini" style="background-color:#F9F9F9;">
+  <div>
+
+    <div class="container-fluid">
+
+      {% if user.is_authenticated %}
+        {% block content %}{% endblock %}
+      {% else %}
+
+      <div class="field-container">
+
+        <div class="form-field">
+          <div class="header">
+            <h2>Login first sheesh </h2>
+            <img class="img" src="{% static 'img/sheesh.jpg' %}" alt="avatar">
+          </div>
+          <form class="field-set" method="post">
+            {% csrf_token %}
+            <label class="lbl" for="username">Username:</label>
+            <input class="input" type="text" name="username" required>
+            <label class="lbl" for="password">Password:</label>
+            <input class="input" type="password" name="password" required>
+            <button class="submit" type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+
+      {% endif %}
+      <div class="row">
+        
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
